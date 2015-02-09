@@ -1,4 +1,6 @@
 class MovieTest
+  
+  # initialize MovieTest with an array the every slot has an array with [u,m,r,p]
   def initialize(list)
     @list = list
   end
