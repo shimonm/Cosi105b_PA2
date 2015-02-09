@@ -186,27 +186,6 @@ class MovieData
 
     puts "\nLast ten elements of most_similar(#{user}):"
     loop_ten(most_similar_list.length-10, most_similar_list)
-    #
-    #(0..9).each do |i|
-    #  puts "#{i+1}. #{pop_list[i][0]}"
-    #end
-#
-    #puts "\nLast ten elements of popularity list:"
-    #d = pop_list.length-10
-    #(d..d+9).each do |i|
-    #  puts "#{i+1}. #{pop_list[i][0]}"
-    #end
-#
-    #puts "\nFirst ten elements of most_similar(#{user}):"
-    #(0..9).each do |i|
-    #  puts "#{i+1}. #{most_similar_list[i][0]}"
-    #end
-#
-    #puts "\nLast ten elements of most_similar(#{user}):"
-    #d = most_similar_list.length-10
-    #(d..d+9).each do |i|
-    #  puts "#{i+1}. #{most_similar_list[i][0]}"
-    #end
   end
 
   def loop_ten(d, list)
