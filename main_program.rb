@@ -37,3 +37,4 @@ puts t.rms
 #m.print_ten(pop_list, most_similar_list, user)
 
 
+# Cosi105b_PA2
