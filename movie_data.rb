@@ -68,8 +68,6 @@ class MovieData
 
   # returns the array of users that have seen movie m
   def viewers(movie_id)
-    #puts "#{usr_map[1]}"
-    #puts usr_map[1][5]
     movie_ratings[movie_id].collect {|user_id, rating| user_id}
   end
 
