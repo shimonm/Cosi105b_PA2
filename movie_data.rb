@@ -176,25 +176,42 @@ class MovieData
   #	prints the first and last ten elements of pop_list and most_sim_list
   def print_ten(pop_list, most_similar_list, user)
     puts "First ten elements of popularity list:"
-    (0..9).each do |i|
-      puts "#{i+1}. #{pop_list[i][0]}"
-    end
+    loop_ten(0, pop_list)
 
     puts "\nLast ten elements of popularity list:"
-    d = pop_list.length-10
-    (d..d+9).each do |i|
-      puts "#{i+1}. #{pop_list[i][0]}"
-    end
+    loop_ten(pop_list.length-10, pop_list)
 
     puts "\nFirst ten elements of most_similar(#{user}):"
-    (0..9).each do |i|
-      puts "#{i+1}. #{most_similar_list[i][0]}"
-    end
+    loop_ten(0, most_similar_list)
 
     puts "\nLast ten elements of most_similar(#{user}):"
-    d = most_similar_list.length-10
+    loop_ten(most_similar_list.length-10, most_similar_list)
+    #
+    #(0..9).each do |i|
+    #  puts "#{i+1}. #{pop_list[i][0]}"
+    #end
+#
+    #puts "\nLast ten elements of popularity list:"
+    #d = pop_list.length-10
+    #(d..d+9).each do |i|
+    #  puts "#{i+1}. #{pop_list[i][0]}"
+    #end
+#
+    #puts "\nFirst ten elements of most_similar(#{user}):"
+    #(0..9).each do |i|
+    #  puts "#{i+1}. #{most_similar_list[i][0]}"
+    #end
+#
+    #puts "\nLast ten elements of most_similar(#{user}):"
+    #d = most_similar_list.length-10
+    #(d..d+9).each do |i|
+    #  puts "#{i+1}. #{most_similar_list[i][0]}"
+    #end
+  end
+
+  def loop_ten(d, list)
     (d..d+9).each do |i|
-      puts "#{i+1}. #{most_similar_list[i][0]}"
+      puts "#{i+1}. #{list[i][0]}"
     end
   end
 end
