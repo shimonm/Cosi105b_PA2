@@ -29,22 +29,22 @@ class MovieData
   def predict(user_id, movie_id)
     # this is a naive implementation which only returns the average rating of the movie as a prediction of what the user rates the movie
     usr_rating = rating(user_id, movie_id)
-    (usr_rating == 0) ? test_set.popularity(movie_id) : usr_rating
+    (usr_rating == 0) ? set.popularity(movie_id) : usr_rating
 
-    movie_average_rating = test_set.popularity(movie_id)
-    most_similar_users_list = test_set.most_similar(user_id)
+    movie_average_rating = set.popularity(movie_id)
+    most_similar_users_list = set.most_similar(user_id)
 
 
   end
 
   # returns the array of movies that user u has watched
   def movies(user_id)
-    training_set.usr_map[user_id].collect {|movie_id, rating| movie_id}
+    set.usr_map[user_id].collect {|movie_id, rating| movie_id}
   end
 
   # returns the array of users that have seen movie m
   def viewers(movie_id)
-    training_set.movie_ratings[movie_id].collect {|user_id, rating| user_id}
+    set.movie_ratings[movie_id].collect {|user_id, rating| user_id}
   end
 
   # run_test(k) runs the predict() method on the first k ratings in the test set and returns a MovieTest object containing the results.

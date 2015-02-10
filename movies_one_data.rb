@@ -23,10 +23,6 @@ class MoviesOneData
 
       # the following code will create a hash of movie_id as keys
       # that are mapped to arrays of values which are the different ratings
-
-      # constructs a hash that maps movie_id's to their ratings
-      #(m_r_hash[movie_id] ||= []) << rating
-
       movie_ratings[movie_id] ||= {}
       movie_ratings[movie_id][user_id] ||= rating
 
