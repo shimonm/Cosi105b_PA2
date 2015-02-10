@@ -9,9 +9,38 @@ u1 = $stdin.gets.chomp
 path = "ml-100k"#$stdin.gets.chomp
 m = MovieData.new(path, u1)
 
+puts "Which user do you want to work on? "
+user_id = $stdin.gets.chomp
+puts "Which movie do you want to work on? "
+movie_id = $stdin.gets.chomp
+puts "Which user do you want to compare to #{user_id}? "
+compared_user_id = $stdin.gets.chomp
 
-puts "#{m.set.most_similar(20)}"
-puts "#{m.set.most_similar(20).collect {|u, r| u}}" #returns an array of most similar users to u
+
+puts "#{m.set.most_similar(user_id)}"
+puts "#{m.set.most_similar(user_id).collect {|u, r| u}}" #returns an array of most similar users to u
+usr_arr = m.set.most_similar(user_id).collect {|u, r| u}
+puts "default mode is training type m.mode = :test for test mode"
+puts "m.rating(user_id, 288) #{m.rating(user_id, movie_id)}" # => 1
+puts m.set.popularity(movie_id) # => 3.4414225941422596
+puts "m.rating(#{compared_user_id}, #{movie_id})#{m.rating(compared_user_id, movie_id)}"
+
+sum = 0.0
+puts "#{usr_arr.collect {|i| m.rating(i, movie_id)}}"
+u = usr_arr.collect {|i| if m.rating(i, movie_id)!=0 then m.rating(i, movie_id) end}
+puts "#{u.compact[0..9].size} #{u.compact[0..9].reduce(:+)}"
+
+puts u.compact[0..9].reduce(:+)/u.compact[0..9].size.to_f
+#(0..10).each do |i|
+#  if u[i]==0
+#
+#  else
+#    sum+=u[i]
+#  end
+#end
+#puts sum/10
+#puts "m.predict(20,6) #{m.predict(20,6)}" # => 3.4
+
 
 
 ##puts "m.rating(20, 6) #{m.rating(20, 6)}" # => 0
