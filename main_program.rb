@@ -20,7 +20,7 @@ puts "Do you want to compare individual users? (y/n)"
 
 answer = $stdin.gets.chomp
 
-if answer == "y" || answer == "Y"
+if answer == "y" || answer == "Y" 
   puts "Comparing individual users "
   puts "Which user do you want to work on? "
   user_id = $stdin.gets.chomp.to_i
