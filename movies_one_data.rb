@@ -1,3 +1,8 @@
+# Author: Shimon Mazor
+# Email: shimonm@brandeis.edu
+# COSI 105B
+# PA2: Movies Part 2
+
 class MoviesOneData
 
   def initialize(file_path)

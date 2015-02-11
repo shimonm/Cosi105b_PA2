@@ -1,3 +1,8 @@
+# Author: Shimon Mazor
+# Email: shimonm@brandeis.edu
+# COSI 105B
+# PA2: Movies Part 2
+
 class MovieTest
   
   # initialize MovieTest with an array the every slot has an array with [u,m,r,p]
