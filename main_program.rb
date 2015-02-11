@@ -10,7 +10,7 @@ require_relative "movies_one_data"
 puts "Please enter the path of the file you want us to process (For example: ml-100k)"
 
 # creates a new MovieData object analysing a file from the user and execute the load_data method
-path = "ml-100k"#$stdin.gets.chomp
+path = $stdin.gets.chomp #"ml-100k"
 
 puts "Choose the name of the training/test set, for example u1, otherwise, press ENTER: "
 u1 = $stdin.gets.chomp
