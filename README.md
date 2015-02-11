@@ -1,10 +1,12 @@
 # Cosi105b_PA2 <a href="https://codeclimate.com/github/shimonm/Cosi105b_PA2"><img src="https://codeclimate.com/github/shimonm/Cosi105b_PA2/badges/gpa.svg" /></a>
 Cosi 105b - Software Engineering and Architecture at Scale - Movies part 2
 
+------------------------------------
 To run the code, run main_program.rb 
+------------------------------------
 
 Final work product
-
+------------------------------------
 
 •	CodeClimate: https://codeclimate.com/github/shimonm/Cosi105b_PA2
 
