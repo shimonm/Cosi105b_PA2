@@ -9,28 +9,36 @@ u1 = $stdin.gets.chomp
 path = "ml-100k"#$stdin.gets.chomp
 m = MovieData.new(path, u1)
 
-puts "Which user do you want to work on? "
-user_id = $stdin.gets.chomp
-puts "Which movie do you want to work on? "
-movie_id = $stdin.gets.chomp
-puts "Which user do you want to compare to #{user_id}? "
-compared_user_id = $stdin.gets.chomp
+#puts "Which user do you want to work on? "
+#user_id = $stdin.gets.chomp.to_i
+#puts "Which movie do you want to work on? "
+#movie_id = $stdin.gets.chomp.to_i
+#puts "Which user do you want to compare to #{user_id}? "
+#compared_user_id = $stdin.gets.chomp.to_i
 
 
-puts "#{m.set.most_similar(user_id)}"
-puts "#{m.set.most_similar(user_id).collect {|u, r| u}}" #returns an array of most similar users to u
-usr_arr = m.set.most_similar(user_id).collect {|u, r| u}
-puts "default mode is training type m.mode = :test for test mode"
-puts "m.rating(user_id, 288) #{m.rating(user_id, movie_id)}" # => 1
-puts m.set.popularity(movie_id) # => 3.4414225941422596
-puts "m.rating(#{compared_user_id}, #{movie_id})#{m.rating(compared_user_id, movie_id)}"
+#puts m.test_set.movie_ratings[599]
+#puts m.test_set.movie_ratings[711]
 
-sum = 0.0
-puts "#{usr_arr.collect {|i| m.rating(i, movie_id)}}"
-u = usr_arr.collect {|i| if m.rating(i, movie_id)!=0 then m.rating(i, movie_id) end}
-puts "#{u.compact[0..9].size} #{u.compact[0..9].reduce(:+)}"
 
-puts u.compact[0..9].reduce(:+)/u.compact[0..9].size.to_f
+#m.mode = :test
+#puts m.predict(user_id, movie_id)
+#puts m.predict(compared_user_id, movie_id)
+
+#puts "#{m.set.most_similar(user_id)}"
+#puts "#{m.set.most_similar(user_id).collect {|u, r| u}}" #returns an array of most similar users to u
+#usr_arr = m.set.most_similar(user_id).collect {|u, r| u}
+#puts "default mode is training type m.mode = :test for test mode"
+#puts "m.rating(user_id, 288) #{m.rating(user_id, movie_id)}" # => 1
+#puts m.set.popularity(movie_id) # => 3.4414225941422596
+#puts "m.rating(#{compared_user_id}, #{movie_id})#{m.rating(compared_user_id, movie_id)}"
+#
+#sum = 0.0
+#puts "#{usr_arr.collect {|i| m.rating(i, movie_id)}}"
+#u = usr_arr.collect {|i| if m.rating(i, movie_id)!=0 then m.rating(i, movie_id) end}
+#puts "#{u.compact[0..9].size} #{u.compact[0..9].reduce(:+)}"
+#
+#puts u.compact[0..9].reduce(:+)/u.compact[0..9].size.to_f
 #(0..10).each do |i|
 #  if u[i]==0
 #
@@ -60,12 +68,14 @@ puts u.compact[0..9].reduce(:+)/u.compact[0..9].size.to_f
 ##
 #puts "viewers of movie 5 #{m.viewers(5)}" # => [1, 13, 21, 28, 72, 92, 118, 130, 135, 188, 207, 234, 255, 256, 267, 270, 291, 303, 339, 345, 367, 368, 372, 374, 375, 378, 393, 399, 405, 406, 417, 422, 425, 435, 437, 447, 468, 504, 506, 546, 551, 562, 577, 593, 604, 633, 643, 648, 655, 666, 671, 682, 709, 727, 741, 763, 776, 796, 805, 814, 833, 864, 880, 886, 892, 907, 916, 919, 925]
 #
-#t = m.run_test(3)
-#puts t.mean
-#puts "#{t.to_a}"
-#puts t.stddev
-#puts t.rms
-#
+
+
+t = m.run_test(1000)
+puts "#{t.to_a}"
+puts t.mean.round(3)
+puts t.stddev.round(3)
+puts t.rms.round(3)
+
 
 
 

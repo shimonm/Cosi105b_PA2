@@ -11,7 +11,7 @@ class MovieTest
     @list.each do |i|
       sum += i[:p] - i[:r]
     end
-    (sum / @list.size).round(3)
+    sum / @list.size
   end
 
   # returns the standard deviation of the error

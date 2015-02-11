@@ -37,8 +37,12 @@ class MoviesOneData
   def popularity(movie_id)
     ratings = movie_ratings[movie_id]
     sum = 0.0
-    ratings.each { |user_id, rating| sum += rating }
-    sum / ratings.length
+    if ratings.nil?
+      3
+    else
+      ratings.each { |user_id, rating| sum += rating }
+      sum / ratings.length
+    end
   end
 
   # generates a list of all movie_id’s ordered by decreasing popularity
