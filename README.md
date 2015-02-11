@@ -2,7 +2,7 @@
 Cosi 105b - Software Engineering and Architecture at Scale - Movies part 2
 
 ------------------------------------
-To run the code, run main_program.rb 
+<b>To run the code, run main_program.rb </b>
 ------------------------------------
 
 Final work product
